@@ -1,0 +1,60 @@
+import java.util.*;
+class binary
+ {
+  int data;
+  binary left;
+  binary right;
+   
+  binary(int num)
+      {
+          this.data=num;
+          this.left=null;
+          this.right=null;
+        }
+        void addnode(int num)
+        {
+            if(num<this.data)
+            {
+                if(this.left!=null)
+                {
+                    this.left.addnode(num);
+                }
+                else
+                {
+                    this.left=new binary(num);
+                }}}
+        void preorder()
+        {
+            System.out.println(this.data);
+            if(this.right!=null)
+            {
+               this.right.preorder();
+             }}
+        void inorder()
+        {
+            if(this.left!=null)
+            {
+                this.left.inorder();
+            }
+            System.out.println(this.data);
+            if(this.right!=null)
+            {
+                this.right.inorder();
+            }}
+        void postorder()
+        {
+            if(this.left!=null)
+            {
+                this.left.postorder();
+            }
+            if(this.right!=null)
+            {
+                this.right.postorder();
+            }
+            System.out.println(this.data);
+        }
+      }
+            
+        
+                
+          
